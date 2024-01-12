@@ -15,25 +15,17 @@ function main() {
     }
 
     Object.keys(directions).forEach(type => {
-
         const btn = document.getElementById(type)!;
-
-        console.log(btn);
-        
-
         btn.addEventListener('mouseover', () => {
             msg.innerHTML = type;
         });
-
         btn.addEventListener('mouseout', () => {
             msg.innerHTML = '';
         });
-
         btn.addEventListener('click', () => {
             console.log(type);
             parent.postMessage({ pluginMessage: { type } }, '*')
         });
-
     });
 
     exp.addEventListener('click', () => {
