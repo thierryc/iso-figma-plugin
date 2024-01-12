@@ -1,4 +1,4 @@
-import { skew, rotate, translate, compose, transform } from 'transformation-matrix';
+import { skew, rotate, translate, compose } from 'transformation-matrix';
 import { directions, Direction } from './directions';
 // This shows the HTML page in "ui.html".
 figma.showUI(__html__, { themeColors: true, height: 280 })
