@@ -1,0 +1,149 @@
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+  line-height: 1.5;
+  margin: 0;
+  background-color: var(--figma-color-bg);
+  color: var(--figma-color-text);
+  overflow: hidden;
+}
+
+body {
+  display: flex; /* Establish flexbox layout for body */
+  flex-direction: column; /* Stack main and footer vertically */
+  min-height: 100vh; /* Ensure body fills viewport height */
+  margin: 0; /* Remove default margins */
+}
+
+main {
+  flex: 1; /* Allow main content to expand and fill remaining space */
+  overflow: hidden;
+  padding: 0;
+}
+
+footer {
+  bottom: 0;
+  width: 100%; /* Ensure footer spans the entire width */
+  border-top: 1px solid #ccc; /* Set a top border with gray color */
+  text-align: center; /* Center align text within the footer */
+  padding: 10px; /* Add top and bottom padding for spacing */
+}
+
+a {
+  text-decoration: none;
+  color: var(--figma-color-text-brand);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 7px;
+  background-color: var(--figma-color-bg-component);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background-color: var(--figma-color-border, #444);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#msg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 10;
+}
+
+.cube {
+  margin-top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.cube svg {
+  display: block;
+}
+
+svg .svg-btn:hover {
+  cursor: pointer;
+}
+
+svg .svg-btn rect {
+  stroke: var(--figma-color-border, #e6e6e6);
+  stroke-width: 2px;
+  fill: var(--figma-color-bg, #ffffff);
+}
+
+svg .svg-btn:hover rect {
+  stroke-width: 2px;
+  fill: var(--figma-color-bg-hover, #f5f5f5);
+}
+
+svg .svg-btn:active rect {
+  stroke: var(--figma-color-icon-brand-pressed, #0768cf);
+  stroke-width: 2px;
+  fill: var(--figma-color-bg-hover, #f5f5f5);
+}
+
+svg .svg-btn path {
+  fill: var(--figma-color-icon, #000000e5);
+}
+
+svg .svg-btn:hover path {
+  fill: var(--figma-color-icon-hover, #000000e5);
+}
+
+svg .svg-btn:active path {
+  fill: var(--figma-color-icon-brand-pressed, #0768cf);
+}
+
+svg .svg-btn:focus rect {
+  /* Define your desired focus styles here, including: */
+  stroke: #fff; /* Add a white outline */
+  stroke-width: 2px; /* Increase outline thickness */
+  fill: #333; /* Change internal color slightly */
+}
+
+#experiment {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#experiment:hover {
+  cursor: pointer;
+}
+
+#experiment svg #bg {
+  fill: var(--figma-color-bg-warning, #f3c11b);
+}
+
+#experiment:hover svg #bg {
+  fill: var(--figma-color-bg-warning-hover, #f3c11b);
+}
+
+#experiment svg #bottle, #experiment svg #liquid {
+  fill: var(--figma-color-bg, #ffffff);
+}
+
+
+#experimentMsg {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  padding: 10;
+  background: var(--figma-color-bg, #ffffff);
+}
