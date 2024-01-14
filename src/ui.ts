@@ -23,7 +23,6 @@ function main() {
             msg.innerHTML = '';
         });
         btn.addEventListener('click', () => {
-            console.log(type);
             parent.postMessage({ pluginMessage: { type } }, '*')
         });
     });

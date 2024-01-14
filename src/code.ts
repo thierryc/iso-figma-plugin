@@ -25,15 +25,17 @@ function transform(node: SceneNode, type: string) {
   }
   const { x, y } = node;
   const { angle, skewX, skewY, nodeRotation }: Direction = getOptions(type);
-  const [nx, ny] = moveOrigine(x, y, node.width, node.height, nodeRotation * (Math.PI / 180));
-  const { a, b, c, d, e, f } = compose(translate(x, y), rotate(angle), skew(skewX, skewY));
+  // const [nx, ny] = moveOrigine(x, y, node.width, node.height, nodeRotation * (Math.PI / 180));
+  const { a, b, c, d, e, f } = compose(skew(skewX, skewY), rotate(angle + nodeRotation * (Math.PI / 180)));
+  // S, R, and T are scale, rotation, and translation matrices
   // https://www.figma.com/plugin-docs/api/properties/nodes-relativetransform/
   // https://www.mathworks.com/discovery/affine-transformation.html
   node.relativeTransform = [
     [a, b, e],
     [c, d, f],
   ];
-  node.rotation = nodeRotation;
+  node.x = x;
+  node.y = y;
   node.setPluginData("cx.ap.type", type);
   return node;
 }
